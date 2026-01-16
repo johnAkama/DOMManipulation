@@ -10,7 +10,7 @@ function checkFilled(btn) {
     btn.setAttribute("class", "filled")
     btn.innerHTML = "&#10084;"
   } else {
-    btn.removeAttribute("filled")
+    btn.classList.remove('filled')
     btn.innerHTML = "&#9825;"
   }
 }
