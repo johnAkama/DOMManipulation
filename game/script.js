@@ -33,22 +33,36 @@ function getRoundResults(userOption) {
 const playerScoreSpanElement = document.getElementById('player-score');
 const computerScoreSpanElement = document.getElementById('computer-score');
 const roundResultsMsg = document.getElementById('results-msg');
+const winnerMsgElement = document.getElementById('winner-msg');
+const optionsContainer = document.querySelector('.options-container');
+const resetGameBtn = document.getElementById('reset-game-btn');
 
 function showResults(userOption) {
     roundResultsMsg.innerText = getRoundResults(userOption);
     computerScoreSpanElement.innerText = computerScore;
     playerScoreSpanElement.innerText = playerScore;
 
-    if (playerScore === 3) {
-        winnerMsgElement.innerText = 'Player has won the game!';
-        optionsContainer.style.display = 'none';
+    if (playerScore === 3 || computerScore === 3) {
+        winnerMsgElement.innerText = `${
+            playerScore === 3 ? 'Player' : 'Computer'
+        } has won the game!`;
+
         resetGameBtn.style.display = 'block';
-    } else if (computerScore === 3) {
-        winnerMsgElement.innerText = 'Computer has won the game!';
         optionsContainer.style.display = 'none';
-        resetGameBtn.style.display = 'block';
     }
 }
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    computerScoreSpanElement.innerText = computerScore;
+    playerScoreSpanElement.innerText = playerScore;
+    resetGameBtn.style.display = 'none';
+    winnerMsgElement.innerText = '';
+    roundResultsMsg.innerText = '';
+    optionsContainer.style.display = 'block';
+}
+
+resetGameBtn.addEventListener('click', resetGame);
 
 const rockBtn = document.getElementById('rock-btn');
 const paperBtn = document.getElementById('paper-btn');
@@ -65,9 +79,3 @@ paperBtn.addEventListener('click', function () {
 scissorsBtn.addEventListener('click', function () {
     showResults('Scissors');
 });
-
-const winnerMsgElement = document.getElementById('winner-msg');
-
-const optionsContainer = document.querySelector('.options-container');
-
-const resetGameBtn = document.getElementById('reset-game-btn');
