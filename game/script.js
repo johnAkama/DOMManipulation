@@ -40,11 +40,13 @@ function showResults(userOption) {
     playerScoreSpanElement.innerText = playerScore;
 
     if (playerScore === 3) {
-        winnerMsgElement.innerText = "Player wins the game!";
-        optionsContainer.style.display = "none";
+        winnerMsgElement.innerText = 'Player has won the game!';
+        optionsContainer.style.display = 'none';
+        resetGameBtn.style.display = 'block';
     } else if (computerScore === 3) {
-        winnerMsgElement.innerText = "Computer wins the game!";
-        optionsContainer.style.display = "none";
+        winnerMsgElement.innerText = 'Computer has won the game!';
+        optionsContainer.style.display = 'none';
+        resetGameBtn.style.display = 'block';
     }
 }
 
