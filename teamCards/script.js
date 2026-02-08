@@ -33,19 +33,29 @@ document.getElementById('year').innerText = footballTeam.year;
 document.getElementById('head-coach').innerText = footballTeam.headCoach;
 const playersList = document.getElementById('player-cards');
 
-footballTeam.players.forEach((player) => {
+function displTeam(teatDis) {
     const listItem = document.createElement('div');
     listItem.classList.add('player-card');
     playersList.appendChild(listItem);
     listItem.innerHTML = `
-        <h2 class="player-card">${player.name}(${player.isCaptain ? 'Captain' : ''})</h2>
-        <p>Position: ${player.position}</p>
+        <h2 class="player-card">${teatDis.name}(${teatDis.isCaptain ? 'Captain' : ''})</h2>
+        <p>Position: ${teatDis.position}</p>
     `;
     playersList.listItem;
+}
+
+footballTeam.players.forEach((player) => {
+    displTeam(player);
 });
 
 document.getElementById('players').addEventListener('change', (e) => {
     footballTeam.players.filter((player) => {
-        console.log(player.position === e.target.value);
+        if (e.target.value === 'all') {
+            displTeam(player);
+        } else {
+            if (player.position === e.target.value) {
+                playersList.innerHTML = player.name;
+            }
+        }
     });
 });
