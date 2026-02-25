@@ -19,3 +19,12 @@ function validateNumber(input) {
     }
     return input * 2;
 }
+<<<<<<< Updated upstream
+=======
+
+try {
+    console.log(validateNumber('5')); // This will work
+} catch (error) {
+    console.error('An error occurred' + error.message);
+}
+>>>>>>> Stashed changes
