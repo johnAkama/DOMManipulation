@@ -11,9 +11,9 @@ const developerObj = [
     },
 ];
 
-const testName = 'Jessica';
+const testName = 'Jessica is a girl';
 const regEx = /Jessica/;
-console.log(regEx.test(testName));
+console.log(testName.match(regEx));
 
 /* function validateNumber(input) {
     if (typeof input !== 'number') {
@@ -23,7 +23,7 @@ console.log(regEx.test(testName));
 }
 
 try {
-    console.log(validateNumber('5')); // This will work
+    console.log(validateNumber('5')); // This will wk
 } catch (error) {
     console.error('An error occurred' + error.message);
 }
