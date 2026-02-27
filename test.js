@@ -51,7 +51,7 @@ console.log(regex.test("I love FREECODECAMPINGSEE!"));
 console.log(regex.test("freeCodoCamp"));
 console.log(regex.test("We went freeCodeCamping.")); */
 
-const pattern = 'freecodecamp';
+/* const pattern = 'freecodecamp';
 const str = 'freecodecamp is the best we love freecodecamp';
 const matched = str.matchAll(pattern);
 const replaced = str.replaceAll(pattern, 'freeCodeCamp');
@@ -59,4 +59,13 @@ console.log(matched);
 console.log(replaced);
 console.log(matched.next()); 
 console.log(matched.next()); 
-console.log(matched.next()); 
+console.log(matched.next()); */
+
+//Match any digit between 0 and 9 using the regex \d. The test() method is used to check if the regex matches any part of the string. In this case, it will return true for the string 'The year is 2024' because it contains digits, and false for 'Hello World' because it does not contain any digits.
+const regTest = /\d/; //const regTest = /0|1|2|3|4|5|6|7|8|9/
+console.log(regTest.test('The year is 2024')); // true
+console.log(regTest.test('Hello World')); // false
+
+const regLetters = /\w/; //const regLetters = /[a-zA-Z]/
+console.log(regLetters.test('Hello World')); // true
+console.log(regLetters.test('12345')); // false
