@@ -62,7 +62,7 @@ console.log(matched.next());
 console.log(matched.next()); */
 
 //Match any digit between 0 and 9 using the regex \d. The test() method is used to check if the regex matches any part of the string. In this case, it will return true for the string 'The year is 2024' because it contains digits, and false for 'Hello World' because it does not contain any digits.
-const regTest = /\d/; //const regTest = /0|1|2|3|4|5|6|7|8|9/
+/* const regTest = /\d/; //const regTest = /0|1|2|3|4|5|6|7|8|9/
 console.log(regTest.test('The year is 2024')); // true
 console.log(regTest.test('Hello World')); // false
 
@@ -89,3 +89,12 @@ const regNonWhiteSpace = /\S/;
 console.log(regNonWhiteSpace.test('HelloWorld'));
 const regRange = /[a-zA-Z]/; //Match any letter from a to z (case-insensitive) using the regex [a-zA-Z]. The test() method will return true for 'Hello World' because it contains letters, and false for '12345' because it does not contain any letters.
 console.log(regRange.test('Hello World'));
+
+const regNegRange = /[^a-zA-Z]/; //Match any character that is not a letter from a to z (case-insensitive) using the regex [^a-zA-Z]. The test() method will return true for 'Hello World!' because it contains a non-letter character (the exclamation mark), and false for 'HelloWorld' because it does not contain any non-letter characters.
+console.log(regNegRange.test('HelloWorld'));
+console.log(regNegRange.test('Hello World!')); */
+
+//Match any alphanumeric character (letters and digits) using the regex \w. The test() method will return true for 'HelloWorld123' because it contains alphanumeric characters, and false for 'Hello World!' because it contains non-alphanumeric characters (the space and the exclamation mark).
+const regexAlpha = /[-\w]/;
+console.log(regexAlpha.test('HelloWorld123')); // true
+console.log(regexAlpha.test('HellWorld')); // true (because of the space and exclamation mark)
