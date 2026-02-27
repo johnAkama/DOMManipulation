@@ -69,3 +69,23 @@ console.log(regTest.test('Hello World')); // false
 const regLetters = /\w/; //const regLetters = /[a-zA-Z]/
 console.log(regLetters.test('Hello World')); // true
 console.log(regLetters.test('12345')); // false
+
+//Match any non-digit character using the regex \D. The test() method will return true for 'Hello World' because it contains non-digit characters, and false for 'The year is 2024' because it does not contain any non-digit characters.
+const regex = /\D/;
+
+//Match any non-word character using the regex \W. The test() method will return true for 'Hello World!' because it contains a non-word character (the exclamation mark), and false for 'HelloWorld' because it does not contain any non-word characters.
+const regNonLetters = /\W/; //const regNonLetters = /[^a-zA-Z]/
+console.log(regNonLetters.test('HelloWorld')); // false
+console.log(regNonLetters.test('HelloWorld')); // false
+console.log(regNonLetters.test('HelloWorld@')); // true
+
+//Match any whitespace character using the regex \s. The test() method will return true for 'Hello World' because it contains a whitespace character (the space), and false for 'HelloWorld' because it does not contain any whitespace characters.
+const regWhiteSpace = /\s/;
+console.log(regWhiteSpace.test('Hello World')); // true
+console.log(regWhiteSpace.test('HelloWorld')); // false
+
+//Match any non-whitespace character using the regex \S. The test() method will return true for 'HelloWorld' because it contains non-whitespace characters, and false for 'Hello World' because it does not contain any non-whitespace characters.
+const regNonWhiteSpace = /\S/;
+console.log(regNonWhiteSpace.test('HelloWorld'));
+const regRange = /[a-zA-Z]/; //Match any letter from a to z (case-insensitive) using the regex [a-zA-Z]. The test() method will return true for 'Hello World' because it contains letters, and false for '12345' because it does not contain any letters.
+console.log(regRange.test('Hello World'));
