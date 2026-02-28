@@ -98,3 +98,4 @@ console.log(regNegRange.test('Hello World!')); */
 const regexAlpha = /[-\w]/;
 console.log(regexAlpha.test('HelloWorld123')); // true
 console.log(regexAlpha.test('HellWorld')); // true (because of the space and exclamation mark)
+
