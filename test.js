@@ -99,3 +99,6 @@ const regexAlpha = /[-\w]/;
 console.log(regexAlpha.test('HelloWorld123')); // true
 console.log(regexAlpha.test('HellWorld')); // true (because of the space and exclamation mark)
 
+const regex = /free(co+de)camp.*free\1camp/i;
+console.log(regex.test("freecooooodecamp is great i love freecooooodecamp")); // true
+console.log(regex.test("freecooooodecamp is great i love freecodecamp")); // false
