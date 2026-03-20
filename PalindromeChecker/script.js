@@ -1,40 +1,16 @@
-'use strict';
+document.getElementById("check-btn").addEventListener("click", function () {
+  const input = document.getElementById("text-input").value;
+  if (input.trim().length < 1) alert('Please input a value');
 
-const button = document.getElementById('check-btn');
-const inputVal = document.getElementById('text-input');
+  const result = document.getElementById("result");
 
-const result = document.getElementById('result');
+  // ✅ Use regex to keep only letters and numbers
+  const cleaned = input.replace(/[^0-9a-z]/gi, "").toLowerCase();
 
-button.addEventListener('click', () => {
-  if (inputVal.value.trim().length < 1) {
-    alert('Please input a value');
-  }
+  // ✅ Check palindrome using regex logic (reverse comparison)
+  const isPalindrome = cleaned === cleaned.split("").reverse().join("");
 
-  if (/^A$/.test(inputVal.value)) {
-    result.textContent = 'A is a palindrome';
-  } else if (/^eye$/.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is a palindrome';
-  } else if (/race car/.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is a palindrome';
-  } else if (/not a palindrome/.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is not a palindrome';
-  } else if (/A man, a plan, a canal. Panama/.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is a palindrome';
-  } else if (/never odd or even/.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is a palindrome';
-  } else if (/nope/.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is not a palindrome';
-  } else if (/almostomla/.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is not a palindrome';
-
-  } else if (/My age is 0, 0 si ega ym./.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is a palindrome';
-
-  } else if (/1 eye for of 1 eye./.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is not a palindrome';
-  } else if (/^0_0 \(: \/\\-\\ :\) 0-0$/.test(inputVal.value)) {
-    result.textContent = inputVal.value + ' is a palindrome';
-  } else {
-    result.textContent = "Try again";
-  }
+  result.textContent = isPalindrome
+    ? `${input} is a palindrome`
+    : `${input} is not a palindrome`;
 });
