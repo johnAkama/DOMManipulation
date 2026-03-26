@@ -1,0 +1,22 @@
+const regexPattern = document.getElementById('pattern');
+const stringToTest = document.getElementById('test-string');
+const testButton = document.getElementById('test-btn');
+const testResult = document.getElementById('result');
+
+const caseInsensitiveFlag = document.getElementById('i');
+const globalFlag = document.getElementById('g');
+
+const getFlags = () => {
+    let flags = '';
+    if (caseInsensitiveFlag.checked) {
+        flags += 'i';
+    }
+    if (globalFlag.checked) {
+        flags += 'g';
+    }
+
+    if (caseInsensitiveFlag.checked && globalFlag.checked) {
+        flags = 'ig';
+    }
+    return flags;
+};
