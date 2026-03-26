@@ -20,3 +20,29 @@ const getFlags = () => {
     }
     return flags;
 };
+
+testButton.addEventListener('click', () => {
+    const regex = new RegExp(regexPattern.value, getFlags());
+    const strVal = stringToTest.textContent;
+    const matches = strVal.match(regex);
+
+    if (matches) {
+        testResult.innerHTML = `Match found: <span class="highlight">${matches[0]}</span>`;
+    } else {
+        testResult.innerText = 'No match found.';
+    }
+
+    testResult.innerHTML = strVal.replace(regex, (m) => {
+        return `<span class="highlight">${m}</span>`;
+    });
+
+    /* if (matches) {
+        testResult.innerText = matches[0];
+
+        testResult.innerHTML = strVal.replace(regex, (m) => {
+            return `<span class="highlight">${m}</span>`;
+        });
+    } else {
+        testResult.innerText = 'no match';
+    } */
+});
